@@ -2,7 +2,6 @@ import React from 'react';
 import { Edit, ImageInput, ImageField, SimpleForm, TextInput, EmailField, ReferenceInput, SelectInput, ArrayInput, SimpleFormIterator } from 'react-admin';
 import ImageWithUploadAndPreview
     from '../../components/ImageWithUploadAndPreview';
-import ImageWithUpload2 from '../../components/ImageWithUpload2';
 const UserEdit = () => (
     <Edit>
         <SimpleForm>

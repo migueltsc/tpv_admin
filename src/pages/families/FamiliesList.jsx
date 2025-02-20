@@ -3,7 +3,7 @@ import React from 'react';
 import {
     List,
     Datagrid,
-    NumberField, TextField, ReferenceField, ImageField,
+    NumberField, TextField, ImageField,
     SearchInput,
     ReferenceInput,
     SelectInput,
@@ -13,20 +13,18 @@ import {
     DeleteButton
 } from 'react-admin';
 
-const UsersFilter = [
+const FamiliesFilter = [
     <SearchInput source="q" alwaysOn />,
-    <ReferenceInput source="role_id" reference="roles" alwaysOn><SelectInput optionText="name" /></ReferenceInput>
+
 ];
 
-const UsersList = () => (
-    <List filters={UsersFilter}>
+const FamiliesList = () => (
+    <List filters={FamiliesFilter}>
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="name" />
-            <TextField source="password" />
-            <TextField source="email" />
-            <ReferenceField source="role_id" reference="roles"><TextField source="name" /></ReferenceField>
             <TextField source="image_url" />
+            <TextField source="color" />
             <EditButton />
             <ShowButton />
             <DeleteButton />
@@ -34,4 +32,4 @@ const UsersList = () => (
     </List>
 );
 
-export default UsersList;
+export default FamiliesList;

@@ -1,0 +1,5108 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "",
+        "title": "standard public schema",
+        "version": "12.2.8"
+    },
+    "host": "localhost:80",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json",
+        "application/vnd.pgrst.object+json;nulls=stripped",
+        "application/vnd.pgrst.object+json",
+        "text/csv"
+    ],
+    "produces": [
+        "application/json",
+        "application/vnd.pgrst.object+json;nulls=stripped",
+        "application/vnd.pgrst.object+json",
+        "text/csv"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "produces": [
+                    "application/openapi+json",
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "summary": "OpenAPI description (this document)",
+                "tags": [
+                    "Introspection"
+                ]
+            }
+        },
+        "/families": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.families.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.color"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/families"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "families"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.families"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "families"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.families.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.color"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "families"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.families.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.families.color"
+                    },
+                    {
+                        "$ref": "#/parameters/body.families"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "families"
+                ]
+            }
+        },
+        "/images": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.images.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.filename"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.real_url"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/images"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "images"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.images"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "images"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.images.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.filename"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.real_url"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "images"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.images.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.filename"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.images.real_url"
+                    },
+                    {
+                        "$ref": "#/parameters/body.images"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "images"
+                ]
+            }
+        },
+        "/product_variations": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.price"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/product_variations"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "product_variations"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.product_variations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "product_variations"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.price"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "product_variations"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_variations.price"
+                    },
+                    {
+                        "$ref": "#/parameters/body.product_variations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "product_variations"
+                ]
+            }
+        },
+        "/payment_lines": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.payment_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.payment_method_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.entity_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/payment_lines"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "payment_lines"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.payment_lines"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "payment_lines"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.payment_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.payment_method_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.entity_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_lines"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.payment_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.payment_method_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.entity_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_lines.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/body.payment_lines"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_lines"
+                ]
+            }
+        },
+        "/payment_headers": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.document_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.payment_date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.observations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/payment_headers"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "payment_headers"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.payment_headers"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "payment_headers"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.document_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.payment_date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.observations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_headers"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.document_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.payment_date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_headers.observations"
+                    },
+                    {
+                        "$ref": "#/parameters/body.payment_headers"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_headers"
+                ]
+            }
+        },
+        "/payment_methods": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.name"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/payment_methods"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.payment_methods"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.name"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.name"
+                    },
+                    {
+                        "$ref": "#/parameters/body.payment_methods"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            }
+        },
+        "/productions": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.production_date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.production_hour"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/productions"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "productions"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.productions"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "productions"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.production_date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.production_hour"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "productions"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.production_date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.productions.production_hour"
+                    },
+                    {
+                        "$ref": "#/parameters/body.productions"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "productions"
+                ]
+            }
+        },
+        "/stock": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/stock"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "stock"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.stock"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "stock"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "stock"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.stock.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/body.stock"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "stock"
+                ]
+            }
+        },
+        "/document_statuses": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.description"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/document_statuses"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "document_statuses"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.document_statuses"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "document_statuses"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.description"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_statuses"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_statuses.description"
+                    },
+                    {
+                        "$ref": "#/parameters/body.document_statuses"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_statuses"
+                ]
+            }
+        },
+        "/products": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.products.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.family_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.tax_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.sold_by_weight"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.retail_price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.tax_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.cost"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.is_composite"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.is_variation"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/products"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "products"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.products"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "products"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.products.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.family_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.tax_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.sold_by_weight"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.retail_price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.tax_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.cost"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.is_composite"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.is_variation"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "products"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.products.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.family_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.tax_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.sold_by_weight"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.retail_price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.tax_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.cost"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.is_composite"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.products.is_variation"
+                    },
+                    {
+                        "$ref": "#/parameters/body.products"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "products"
+                ]
+            }
+        },
+        "/reservations": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.document_line_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/reservations"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.reservations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.document_line_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.document_line_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/body.reservations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            }
+        },
+        "/entities": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.alias"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.entity_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.address"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.zip_code"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.city"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.province"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.country"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.phone"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.tax_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/entities"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "entities"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.entities"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "entities"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.alias"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.entity_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.address"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.zip_code"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.city"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.province"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.country"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.phone"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.tax_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "entities"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.alias"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.entity_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.address"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.zip_code"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.city"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.province"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.country"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.phone"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entities.tax_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.entities"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "entities"
+                ]
+            }
+        },
+        "/document_types": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.description"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/document_types"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "document_types"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.document_types"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "document_types"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.description"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_types"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_types.description"
+                    },
+                    {
+                        "$ref": "#/parameters/body.document_types"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_types"
+                ]
+            }
+        },
+        "/document_taxes": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.document_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.tax_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.base"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.tax"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.total"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/document_taxes"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "document_taxes"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.document_taxes"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "document_taxes"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.document_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.tax_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.base"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.tax"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.total"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_taxes"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.document_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.tax_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.base"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.tax"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_taxes.total"
+                    },
+                    {
+                        "$ref": "#/parameters/body.document_taxes"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_taxes"
+                ]
+            }
+        },
+        "/entity_types": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.description"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/entity_types"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "entity_types"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.entity_types"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "entity_types"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.description"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "entity_types"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.entity_types.description"
+                    },
+                    {
+                        "$ref": "#/parameters/body.entity_types"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "entity_types"
+                ]
+            }
+        },
+        "/product_packs": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.component_product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/product_packs"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "product_packs"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.product_packs"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "product_packs"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.component_product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "product_packs"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.component_product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.product_packs.quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/body.product_packs"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "product_packs"
+                ]
+            }
+        },
+        "/users": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.users.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.password"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.role_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/users"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.users"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.users.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.password"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.role_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.users.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.password"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.role_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.image_url"
+                    },
+                    {
+                        "$ref": "#/parameters/body.users"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            }
+        },
+        "/document_headers": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.number"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.discount_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.discount_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.total_tax"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_address"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_zip_code"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_city"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_province"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_region"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_country"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_tax_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.document_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.observations"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.document_status_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/document_headers"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "document_headers"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.document_headers"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "document_headers"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.number"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.discount_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.discount_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.total_tax"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_address"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_zip_code"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_city"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_province"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_region"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_country"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_tax_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.document_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.observations"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.document_status_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_headers"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.number"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.discount_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.discount_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.total_tax"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_address"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_zip_code"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_city"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_province"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_region"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_country"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.entity_tax_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.document_type_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.observations"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_headers.document_status_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.document_headers"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_headers"
+                ]
+            }
+        },
+        "/roles": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.roles.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.roles.name"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/roles"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "roles"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.roles"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "roles"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.roles.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.roles.name"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "roles"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.roles.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.roles.name"
+                    },
+                    {
+                        "$ref": "#/parameters/body.roles"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "roles"
+                ]
+            }
+        },
+        "/document_lines": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.document_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_total"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_order"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_type"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_observations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/document_lines"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "document_lines"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.document_lines"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "document_lines"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.document_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_total"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_order"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_type"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_observations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_lines"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.document_header_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_quantity"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.product_price"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.tax_description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.discount_description"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_total"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_order"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_type"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.document_lines.line_observations"
+                    },
+                    {
+                        "$ref": "#/parameters/body.document_lines"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "document_lines"
+                ]
+            }
+        },
+        "/tax_types": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/tax_types"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "tax_types"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.tax_types"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "tax_types"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "tax_types"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.tax_types.percentage"
+                    },
+                    {
+                        "$ref": "#/parameters/body.tax_types"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "tax_types"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "families": {
+            "required": [
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "image_url": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "color": {
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "images": {
+            "required": [
+                "id",
+                "filename",
+                "url",
+                "real_url"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "filename": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "url": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "real_url": {
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "product_variations": {
+            "required": [
+                "id",
+                "product_id",
+                "name",
+                "price"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "description": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "price": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "payment_lines": {
+            "required": [
+                "id",
+                "payment_header_id",
+                "payment_method_id",
+                "amount"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "payment_header_id": {
+                    "description": "Note:\nThis is a Foreign Key to `payment_headers.id`.<fk table='payment_headers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "payment_method_id": {
+                    "description": "Note:\nThis is a Foreign Key to `payment_methods.id`.<fk table='payment_methods' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "entity_id": {
+                    "description": "Note:\nThis is a Foreign Key to `entities.id`.<fk table='entities' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "amount": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "payment_headers": {
+            "required": [
+                "id",
+                "document_header_id",
+                "payment_date"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "document_header_id": {
+                    "description": "Note:\nThis is a Foreign Key to `document_headers.id`.<fk table='document_headers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "payment_date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "amount": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "observations": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "payment_methods": {
+            "required": [
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "productions": {
+            "required": [
+                "id",
+                "product_id",
+                "production_date",
+                "quantity",
+                "production_hour"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "production_date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "quantity": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "production_hour": {
+                    "format": "time without time zone",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "stock": {
+            "required": [
+                "id",
+                "product_id",
+                "date",
+                "quantity"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "quantity": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "document_statuses": {
+            "required": [
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "description": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "products": {
+            "required": [
+                "id",
+                "name",
+                "price",
+                "family_id",
+                "tax_type_id",
+                "sold_by_weight",
+                "retail_price",
+                "tax_amount",
+                "cost",
+                "is_composite",
+                "is_variation"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "description": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "price": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "family_id": {
+                    "description": "Note:\nThis is a Foreign Key to `families.id`.<fk table='families' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "tax_type_id": {
+                    "description": "Note:\nThis is a Foreign Key to `tax_types.id`.<fk table='tax_types' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "image_url": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "sold_by_weight": {
+                    "default": false,
+                    "format": "boolean",
+                    "type": "boolean"
+                },
+                "retail_price": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "tax_amount": {
+                    "default": 0,
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "cost": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "is_composite": {
+                    "default": false,
+                    "format": "boolean",
+                    "type": "boolean"
+                },
+                "is_variation": {
+                    "default": false,
+                    "format": "boolean",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "reservations": {
+            "required": [
+                "id",
+                "document_line_id",
+                "product_id",
+                "date",
+                "quantity"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "document_line_id": {
+                    "description": "Note:\nThis is a Foreign Key to `document_lines.id`.<fk table='document_lines' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "date": {
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "quantity": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "entities": {
+            "required": [
+                "id",
+                "name",
+                "entity_type_id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "alias": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_type_id": {
+                    "description": "Note:\nThis is a Foreign Key to `entity_types.id`.<fk table='entity_types' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "address": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "zip_code": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "city": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "province": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "country": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "phone": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "email": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "tax_id": {
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "document_types": {
+            "required": [
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "description": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "document_taxes": {
+            "required": [
+                "id",
+                "document_id",
+                "tax_type_id",
+                "base",
+                "tax",
+                "total"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "document_id": {
+                    "description": "Note:\nThis is a Foreign Key to `document_headers.id`.<fk table='document_headers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "tax_type_id": {
+                    "description": "Note:\nThis is a Foreign Key to `tax_types.id`.<fk table='tax_types' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "base": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "tax": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "total": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "entity_types": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "description": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "product_packs": {
+            "required": [
+                "id",
+                "product_id",
+                "component_product_id",
+                "quantity"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "component_product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "quantity": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "users": {
+            "required": [
+                "id",
+                "name",
+                "password",
+                "email",
+                "role_id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "password": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "email": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "role_id": {
+                    "description": "Note:\nThis is a Foreign Key to `roles.id`.<fk table='roles' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "image_url": {
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "document_headers": {
+            "required": [
+                "id",
+                "date",
+                "number"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "number": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "discount_percentage": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "discount_amount": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "total_tax": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "entity_id": {
+                    "description": "Note:\nThis is a Foreign Key to `entities.id`.<fk table='entities' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "entity_address": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_zip_code": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_city": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_province": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_region": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_country": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "entity_tax_id": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "document_type_id": {
+                    "description": "Note:\nThis is a Foreign Key to `document_types.id`.<fk table='document_types' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "observations": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "user_id": {
+                    "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "document_status_id": {
+                    "description": "Note:\nThis is a Foreign Key to `document_statuses.id`.<fk table='document_statuses' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "roles": {
+            "required": [
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "document_lines": {
+            "required": [
+                "id",
+                "document_header_id",
+                "product_name",
+                "product_quantity",
+                "product_price",
+                "tax_percentage",
+                "tax_amount",
+                "discount_amount",
+                "line_total",
+                "line_order",
+                "line_type"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "document_header_id": {
+                    "description": "Note:\nThis is a Foreign Key to `document_headers.id`.<fk table='document_headers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_id": {
+                    "description": "Note:\nThis is a Foreign Key to `products.id`.<fk table='products' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "product_name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "product_quantity": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "product_price": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "tax_percentage": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "tax_amount": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "tax_description": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "discount_percentage": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "discount_amount": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "discount_description": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "line_total": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "line_order": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "line_type": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "line_observations": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "tax_types": {
+            "required": [
+                "id",
+                "name",
+                "percentage"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "percentage": {
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "parameters": {
+        "preferParams": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "params=single-object"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferReturn": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferCount": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "count=none"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferPost": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "select": {
+            "name": "select",
+            "description": "Filtering Columns",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "on_conflict": {
+            "name": "on_conflict",
+            "description": "On Conflict",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "order": {
+            "name": "order",
+            "description": "Ordering",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "range": {
+            "name": "Range",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "header",
+            "type": "string"
+        },
+        "rangeUnit": {
+            "name": "Range-Unit",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "default": "items",
+            "in": "header",
+            "type": "string"
+        },
+        "offset": {
+            "name": "offset",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "limit": {
+            "name": "limit",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.families": {
+            "name": "families",
+            "description": "families",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/families"
+            }
+        },
+        "rowFilter.families.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.families.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.families.image_url": {
+            "name": "image_url",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.families.color": {
+            "name": "color",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.images": {
+            "name": "images",
+            "description": "images",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/images"
+            }
+        },
+        "rowFilter.images.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.images.filename": {
+            "name": "filename",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.images.url": {
+            "name": "url",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.images.real_url": {
+            "name": "real_url",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.product_variations": {
+            "name": "product_variations",
+            "description": "product_variations",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/product_variations"
+            }
+        },
+        "rowFilter.product_variations.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_variations.product_id": {
+            "name": "product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_variations.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_variations.description": {
+            "name": "description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_variations.price": {
+            "name": "price",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.payment_lines": {
+            "name": "payment_lines",
+            "description": "payment_lines",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/payment_lines"
+            }
+        },
+        "rowFilter.payment_lines.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_lines.payment_header_id": {
+            "name": "payment_header_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_lines.payment_method_id": {
+            "name": "payment_method_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_lines.entity_id": {
+            "name": "entity_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_lines.amount": {
+            "name": "amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.payment_headers": {
+            "name": "payment_headers",
+            "description": "payment_headers",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/payment_headers"
+            }
+        },
+        "rowFilter.payment_headers.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_headers.document_header_id": {
+            "name": "document_header_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_headers.payment_date": {
+            "name": "payment_date",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_headers.amount": {
+            "name": "amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_headers.observations": {
+            "name": "observations",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.payment_methods": {
+            "name": "payment_methods",
+            "description": "payment_methods",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/payment_methods"
+            }
+        },
+        "rowFilter.payment_methods.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_methods.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.productions": {
+            "name": "productions",
+            "description": "productions",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/productions"
+            }
+        },
+        "rowFilter.productions.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.productions.product_id": {
+            "name": "product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.productions.production_date": {
+            "name": "production_date",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.productions.quantity": {
+            "name": "quantity",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.productions.production_hour": {
+            "name": "production_hour",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.stock": {
+            "name": "stock",
+            "description": "stock",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/stock"
+            }
+        },
+        "rowFilter.stock.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.stock.product_id": {
+            "name": "product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.stock.date": {
+            "name": "date",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.stock.quantity": {
+            "name": "quantity",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.document_statuses": {
+            "name": "document_statuses",
+            "description": "document_statuses",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/document_statuses"
+            }
+        },
+        "rowFilter.document_statuses.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_statuses.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_statuses.description": {
+            "name": "description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.products": {
+            "name": "products",
+            "description": "products",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/products"
+            }
+        },
+        "rowFilter.products.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.description": {
+            "name": "description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.price": {
+            "name": "price",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.family_id": {
+            "name": "family_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.tax_type_id": {
+            "name": "tax_type_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.image_url": {
+            "name": "image_url",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.sold_by_weight": {
+            "name": "sold_by_weight",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.retail_price": {
+            "name": "retail_price",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.tax_amount": {
+            "name": "tax_amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.cost": {
+            "name": "cost",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.is_composite": {
+            "name": "is_composite",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.products.is_variation": {
+            "name": "is_variation",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.reservations": {
+            "name": "reservations",
+            "description": "reservations",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/reservations"
+            }
+        },
+        "rowFilter.reservations.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.document_line_id": {
+            "name": "document_line_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.product_id": {
+            "name": "product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.date": {
+            "name": "date",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.quantity": {
+            "name": "quantity",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.entities": {
+            "name": "entities",
+            "description": "entities",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/entities"
+            }
+        },
+        "rowFilter.entities.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.alias": {
+            "name": "alias",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.entity_type_id": {
+            "name": "entity_type_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.address": {
+            "name": "address",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.zip_code": {
+            "name": "zip_code",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.city": {
+            "name": "city",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.province": {
+            "name": "province",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.country": {
+            "name": "country",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.phone": {
+            "name": "phone",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.email": {
+            "name": "email",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entities.tax_id": {
+            "name": "tax_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.document_types": {
+            "name": "document_types",
+            "description": "document_types",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/document_types"
+            }
+        },
+        "rowFilter.document_types.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_types.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_types.description": {
+            "name": "description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.document_taxes": {
+            "name": "document_taxes",
+            "description": "document_taxes",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/document_taxes"
+            }
+        },
+        "rowFilter.document_taxes.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_taxes.document_id": {
+            "name": "document_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_taxes.tax_type_id": {
+            "name": "tax_type_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_taxes.base": {
+            "name": "base",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_taxes.tax": {
+            "name": "tax",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_taxes.total": {
+            "name": "total",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.entity_types": {
+            "name": "entity_types",
+            "description": "entity_types",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/entity_types"
+            }
+        },
+        "rowFilter.entity_types.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entity_types.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.entity_types.description": {
+            "name": "description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.product_packs": {
+            "name": "product_packs",
+            "description": "product_packs",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/product_packs"
+            }
+        },
+        "rowFilter.product_packs.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_packs.product_id": {
+            "name": "product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_packs.component_product_id": {
+            "name": "component_product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.product_packs.quantity": {
+            "name": "quantity",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.users": {
+            "name": "users",
+            "description": "users",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/users"
+            }
+        },
+        "rowFilter.users.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.password": {
+            "name": "password",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.email": {
+            "name": "email",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.role_id": {
+            "name": "role_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.image_url": {
+            "name": "image_url",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.document_headers": {
+            "name": "document_headers",
+            "description": "document_headers",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/document_headers"
+            }
+        },
+        "rowFilter.document_headers.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.date": {
+            "name": "date",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.number": {
+            "name": "number",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.discount_percentage": {
+            "name": "discount_percentage",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.discount_amount": {
+            "name": "discount_amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.total_tax": {
+            "name": "total_tax",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_id": {
+            "name": "entity_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_address": {
+            "name": "entity_address",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_zip_code": {
+            "name": "entity_zip_code",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_city": {
+            "name": "entity_city",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_province": {
+            "name": "entity_province",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_region": {
+            "name": "entity_region",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_country": {
+            "name": "entity_country",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.entity_tax_id": {
+            "name": "entity_tax_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.document_type_id": {
+            "name": "document_type_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.observations": {
+            "name": "observations",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.user_id": {
+            "name": "user_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_headers.document_status_id": {
+            "name": "document_status_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.roles": {
+            "name": "roles",
+            "description": "roles",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/roles"
+            }
+        },
+        "rowFilter.roles.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.roles.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.document_lines": {
+            "name": "document_lines",
+            "description": "document_lines",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/document_lines"
+            }
+        },
+        "rowFilter.document_lines.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.document_header_id": {
+            "name": "document_header_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.product_id": {
+            "name": "product_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.product_name": {
+            "name": "product_name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.product_quantity": {
+            "name": "product_quantity",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.product_price": {
+            "name": "product_price",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.tax_percentage": {
+            "name": "tax_percentage",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.tax_amount": {
+            "name": "tax_amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.tax_description": {
+            "name": "tax_description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.discount_percentage": {
+            "name": "discount_percentage",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.discount_amount": {
+            "name": "discount_amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.discount_description": {
+            "name": "discount_description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.line_total": {
+            "name": "line_total",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.line_order": {
+            "name": "line_order",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.line_type": {
+            "name": "line_type",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.document_lines.line_observations": {
+            "name": "line_observations",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.tax_types": {
+            "name": "tax_types",
+            "description": "tax_types",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/tax_types"
+            }
+        },
+        "rowFilter.tax_types.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.tax_types.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.tax_types.percentage": {
+            "name": "percentage",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        }
+    },
+    "externalDocs": {
+        "description": "PostgREST Documentation",
+        "url": "https://postgrest.org/en/v12/references/api.html"
+    }
+}
